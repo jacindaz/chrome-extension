@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Jacinda's Dashboard",
+  "description": "Jacinda's dashboard with the weather, to do list, etc.",
+  "version": "1.0",
+
+  "permissions": [
+    "https://secure.flickr.com/"
+  ],
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html"
+  },
+  "chrome_url_overrides" : {
+        "newtab": "newtab.html"
+    }
+}
