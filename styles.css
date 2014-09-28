@@ -5,18 +5,20 @@
 }
 
 html {
-        background: url(images/tulip-field-netherlands.jpg) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-      }
+  background: url(images/tulip-field-netherlands.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 .dashboard-box {
   width: 300px;
+  height: 350px;
   background-color: white;
   opacity: .9;
   padding: 3px 10px 10px 10px;
   border-radius: 1em;
   cursor: move;
+  margin: 10px;
 }
