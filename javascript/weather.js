@@ -8,11 +8,22 @@
 
 $.ajax({
     dataType: "json",
-    url: "http://api.wunderground.com/api/844ce94be6db44dd/conditions/q/CA/San_Francisco.json",
-    success: wundergroundSuccess()
+    url: "http://api.wunderground.com/api/844ce94be6db44dd/conditions/q/MA/Boston.json",
+    success: function(json) {
+        wundergroundSuccess();
+        console.log("JSON: " + json + "\n");
+        console.log("Current Temperature: " + json["current_observation"]["temperature_string"]);
+        document.getElementById('weather').innerHTML += (json["current_observation"]["temperature_string"])
+    }
 });
 
 function wundergroundSuccess() {
     console.log("Weather ajax success");
-    alert("Weather ajax success");
+    // alert("Weather ajax success");
+}
+
+function getWeatherdata(json)
+{
+    var returned_json = jQuery.parseJSON(json);
+    console.log(returned_json);
 }
