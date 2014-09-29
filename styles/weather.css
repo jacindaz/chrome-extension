@@ -1,0 +1,5 @@
+#weather {
+  background: url("../images/weather-background.png") no-repeat center;
+  opacity: .8;
+  background-size: 500px 450px;
+}
