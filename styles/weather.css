@@ -1,5 +1,14 @@
+#inner-container-weather {
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  margin: 5%;
+  vertical-align: center;
+  border-radius: 1em;
+  padding: 3%;
+}
+
 #weather {
   background: url("../images/weather-background.png") no-repeat center;
-  opacity: .8;
   background-size: 500px 450px;
 }
