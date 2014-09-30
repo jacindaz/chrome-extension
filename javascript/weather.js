@@ -1,11 +1,3 @@
-// if (window.File && window.FileReader && window.FileList && window.Blob) {
-//     //success! All the File APIs are supported.
-// } else {
-//     alert('File APIs are not supported in this browser.')
-// }
-
-// document.getElementById('weather').innerHTML += api_info;
-
 $.ajax({
     dataType: "json",
     url: "http://api.wunderground.com/api/844ce94be6db44dd/conditions/q/MA/Boston.json",
@@ -14,7 +6,8 @@ $.ajax({
         console.log("JSON: " + json + "\n");
         console.log("Current Temperature: " + json["current_observation"]["temperature_string"]);
         document.getElementById('weather').innerHTML += (json["current_observation"]["temperature_string"])
-    }
+    },
+    error: function(e) { wundergroundFailure() }
 });
 
 function wundergroundSuccess() {
@@ -22,8 +15,7 @@ function wundergroundSuccess() {
     // alert("Weather ajax success");
 }
 
-function getWeatherdata(json)
-{
-    var returned_json = jQuery.parseJSON(json);
-    console.log(returned_json);
+function wundergroundFailure() {
+    console.log("Unable to call Wunderground API.");
+    alert("Unable to call Wunderground API.");
 }
