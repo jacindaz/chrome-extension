@@ -23,6 +23,10 @@ html {
   margin: 10px;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Shadows Into Light', cursive;
+}
+
 /**********GRID ELEMENTS*********/
 [class*='col-'] {
   float: left;
