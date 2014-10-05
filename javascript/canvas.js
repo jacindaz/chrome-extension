@@ -10,9 +10,9 @@ if(canvas.getContext){
     "Sorry, your browser is unable to display HTML5 Canvas."
 }
 
-function draw() {
-  console.log("I am inside draw function");
-  var canvas_triangle = document.getElementById('canvasTriangle');
+function drawSmiley() {
+  console.log("I am inside draw smiley function");
+  var canvas_triangle = document.getElementById('canvasSmiley');
   if (canvas_triangle.getContext){
     var ctx = canvas_triangle.getContext('2d');
 
@@ -27,4 +27,33 @@ function draw() {
     ctx.stroke();
   }
 }
-window.onload = draw;
+
+function drawTriangle() {
+  console.log("I am inside draw triangle function");
+  var canvas = document.getElementById('canvasTriangle');
+  if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+
+    // Filled triangle
+    ctx.beginPath();
+    ctx.moveTo(25,25);
+    ctx.lineTo(105,25);
+    ctx.lineTo(25,105);
+    ctx.fill();
+
+    // Stroked triangle
+    ctx.beginPath();
+    ctx.moveTo(125,125);
+    ctx.lineTo(125,45);
+    ctx.lineTo(45,125);
+    ctx.closePath();
+    ctx.stroke();
+  }
+}
+
+function drawThings() {
+  drawTriangle();
+  drawSmiley();
+}
+
+window.onload = drawThings;
