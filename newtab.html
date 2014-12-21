@@ -3,7 +3,6 @@
   <head>
     <title>Jacinda's Dashboard</title>
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/weather.css">
     <link rel="stylesheet" href="/styles/calculator.css">
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
     <style>
@@ -19,23 +18,23 @@
   <body>
 
     <div id="inner-container">
-      <div id="weather" class="dashboard-box col-1-3" draggable="true">
+      <div class="dashboard-box col-1-3">
         <div id="outside-box">
           <div>
             <p id="clear-button">clear</p>
-            <p id="calculator-results">lala</p>
-            <p class="number-button">7</p>
+            <p id="calculator-results">Calculate something!</p>
+            <p class="number-button" id="7">7</p>
             <p class="number-button">8</p>
             <p class="number-button">9</p>
-            <p class="number-button">+</p>
+            <p class="number-button">+</p><br>
             <p class="number-button">4</p>
             <p class="number-button">5</p>
             <p class="number-button">6</p>
-            <p class="number-button">-</p>
+            <p class="number-button">-</p><br>
             <p class="number-button">1</p>
             <p class="number-button">2</p>
             <p class="number-button">3</p>
-            <p class="number-button">/</p>
+            <p class="number-button">/</p><br>
             <p class="number-button">0</p>
             <p class="number-button">.</p>
             <p class="number-button">=</p>
@@ -44,22 +43,24 @@
         </div>
       </div>
 
-      <div class="dashboard-box col-1-3" draggable="true">
+      <div class="dashboard-box col-1-3">
         <h1>Box 2</h1>
       </div>
 
-      <div class="dashboard-box col-1-3" draggable="true">
+      <div class="dashboard-box col-1-3">
         <h1>Box 3</h1>
       </div>
 
-       <div class="dashboard-box col-3-3" draggable="true">
+       <div class="dashboard-box col-3-3">
         <h1>Full Length Box</h1>
       </div>
     </div>
 
-    <script src="javascript/drag_drop.js"></script>
+
     <script src="javascript/jquery.js"></script>
-    <script src="javascript/weather.js"></script>
+    <script src="javascript/calculator.js"></script>
+    <!--script src="javascript/drag_drop.js"></script-->
+    <!--script src="javascript/weather.js"></script-->
 
   </body>
 </html>
