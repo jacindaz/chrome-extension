@@ -1,16 +1,5 @@
 var selected_number;
-var result = 0;
-
-
-// if a particular number is selected
-
-// if a particular operator is selected
-
-// do that operation with the selected number
-// on the current result
-
-// return the result
-// by appending to #calculator-results id
+var result = 'Calculate something!';
 
 
 function displayResult(result) {
@@ -26,11 +15,15 @@ $("#clear-button").click(function() {
     displayResult(result);
 })
 
-$("#7").click(function() {
-    selected_number = "7";
-    if (result === 0) {
-      result = selected_number;
-      console.log("Result: ", result);
-    }
-    displayResult(result);
-});
+
+
+$(document).ready(function() {
+    $("#1,#2,#3,#4,#5,#6,#7,#8,#9,#0").bind("click", function() {
+        var selected_element = $(this);
+        selected_number = selected_element.text();
+        if (result === 'Calculate something!') {
+          result = selected_number;
+        }
+        displayResult(result);
+    });
+})
