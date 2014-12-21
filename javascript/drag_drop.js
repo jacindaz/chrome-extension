@@ -1,3 +1,5 @@
+// DRAG AND DROP---------------------------------------------------------------
+
 var boxes = document.querySelectorAll('#inner-container .dashboard-box');
 [].forEach.call(boxes, function(box) {
   box.addEventListener('dragstart', handleDragStart, false);
