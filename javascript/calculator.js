@@ -1,5 +1,6 @@
 var selected_number;
 var result = 'Calculate something!';
+var expression = '';
 
 
 function displayResult(result) {
@@ -24,6 +25,24 @@ $(document).ready(function() {
         if (result === 'Calculate something!') {
           result = selected_number;
         }
+        expression += selected_number;
+        alert("Adds selected number to expression: " + expression);
         displayResult(result);
     });
 })
+
+$("#plus,#minus,#divide,#multiply").bind("click", function() {
+    var selected_operator_element = $(this);
+    var selected_operator = selected_operator_element.text();
+
+    alert("Operator: " + selected_operator);
+
+    expression += selected_operator;
+    alert("Expression: " + expression);
+});
+
+
+$("#equal").click(function() {
+    result = eval(expression);
+    displayResult(result);
+});
