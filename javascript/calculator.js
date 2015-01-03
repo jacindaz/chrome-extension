@@ -1,6 +1,6 @@
 var selected_number;
 var result = 'Calculate something!';
-var expression = '';
+var expression = [];
 
 
 function displayResult(result) {
@@ -13,6 +13,7 @@ function calculateSomething() {
 
 $("#clear-button").click(function() {
     result = "Calculate something!";
+    expression = [];
     displayResult(result);
 })
 
@@ -25,8 +26,7 @@ $(document).ready(function() {
         if (result === 'Calculate something!') {
           result = selected_number;
         }
-        expression += selected_number;
-        alert("Adds selected number to expression: " + expression);
+        expression.push(selected_number);
         displayResult(result);
     });
 })
@@ -34,15 +34,35 @@ $(document).ready(function() {
 $("#plus,#minus,#divide,#multiply").bind("click", function() {
     var selected_operator_element = $(this);
     var selected_operator = selected_operator_element.text();
-
-    alert("Operator: " + selected_operator);
-
-    expression += selected_operator;
-    alert("Expression: " + expression);
+    expression.push(selected_operator);
 });
 
 
 $("#equal").click(function() {
-    result = eval(expression);
+    result = evaluate_expression(expression);
     displayResult(result);
 });
+
+function evaluate_expression(expression) {
+  var result = 0;
+  for (var i = 0; i < expression.length; i++) {
+
+    switch(expression[i]) {
+      case '+':
+        result += parseFloat(expression[i+1])
+        return result
+      case '-':
+        result -= parseFloat(expression[i+1])
+        return result
+      case '/':
+        result /= parseFloat(expression[i+1])
+        return result
+      case 'x':
+
+        result *= parseFloat(expression[i+1])
+        return result
+      default:
+        result = parseFloat(expression[i])
+    }
+  }
+}
