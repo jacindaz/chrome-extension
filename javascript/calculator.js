@@ -11,7 +11,7 @@ function calculateSomething() {
 
 }
 
-$("#clear-button").click(function() {
+$("#clear-button").on('click', function() {
     result = "Calculate something!";
     expression = [];
     displayResult(result);
@@ -20,7 +20,7 @@ $("#clear-button").click(function() {
 
 
 $(document).ready(function() {
-    $("#1,#2,#3,#4,#5,#6,#7,#8,#9,#0").bind("click", function() {
+    $("#1,#2,#3,#4,#5,#6,#7,#8,#9,#0").on("click", function() {
         var selected_element = $(this);
         selected_number = selected_element.text();
         if (result === 'Calculate something!') {
@@ -31,14 +31,14 @@ $(document).ready(function() {
     });
 })
 
-$("#plus,#minus,#divide,#multiply").bind("click", function() {
+$("#plus,#minus,#divide,#multiply").on("click", function() {
     var selected_operator_element = $(this);
     var selected_operator = selected_operator_element.text();
     expression.push(selected_operator);
 });
 
 
-$("#equal").click(function() {
+$("#equal").on('click', function() {
     result = evaluate_expression(expression);
     displayResult(result);
 });
