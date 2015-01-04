@@ -13,6 +13,7 @@ function displayResult(result) {
 }
 
 $("#clear-button").on('click', function() {
+    remove_selected_button_highlight();
     result = "Calculate something!";
     expression = [];
     displayResult(result);
@@ -21,6 +22,7 @@ $("#clear-button").on('click', function() {
 
 $(document).ready(function() {
     $("#1,#2,#3,#4,#5,#6,#7,#8,#9,#0,#decimal").on("click", function() {
+        remove_selected_button_highlight();
         var selected_element = $(this);
         selected_number = selected_element.text();
         if (result === 'Calculate something!' || result == '') {
@@ -39,6 +41,7 @@ $(document).ready(function() {
 })
 
 $("#plus,#minus,#divide,#multiply").on("click", function() {
+    $(this).addClass('clicked_button');
     result = ''
     var selected_operator_element = $(this);
     var selected_operator = selected_operator_element.text();
@@ -53,12 +56,14 @@ $("#plus,#minus,#divide,#multiply").on("click", function() {
 });
 
 $("#decimal").on('click', function() {
+  remove_selected_button_highlight();
   console.log('Clicked on decimal');
 
 });
 
 
 $("#equal").on('click', function() {
+    remove_selected_button_highlight();
     result = evaluate_expression(expression);
     displayResult(result);
 });
@@ -89,9 +94,16 @@ function evaluate_expression(expression) {
 function array_to_string(array) {
   var final_string = '';
   for (var i = 0; i < array.length; i++) {
-    // console.log(array[i]);
     final_string += array[i];
     final_string += ' ';
   }
   return final_string;
+}
+
+function remove_selected_button_highlight() {
+  var highlighted_operator = $('div.clicked_button');
+  console.log('highlighted operator function' + highlighted_operator);
+  if (highlighted_operator) {
+    highlighted_operator.removeClass('clicked_button');
+  }
 }
