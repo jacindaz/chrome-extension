@@ -20,13 +20,13 @@ $("#clear-button").on('click', function() {
 
 
 $(document).ready(function() {
-    $("#1,#2,#3,#4,#5,#6,#7,#8,#9,#0").on("click", function() {
+    $("#1,#2,#3,#4,#5,#6,#7,#8,#9,#0,#decimal").on("click", function() {
         var selected_element = $(this);
         selected_number = selected_element.text();
         if (result === 'Calculate something!' || result == '') {
           result = selected_number;
           expression.push(result);
-        } else if (result != '') {
+        } else if (result != '' || selected_number == '.') {
           result += selected_number;
           expression[expression.length - 1] = result;
         }
@@ -50,6 +50,11 @@ $("#plus,#minus,#divide,#multiply").on("click", function() {
 
     console.log('Expression: ' + expression);
     console.log('Result: ' + result);
+});
+
+$("#decimal").on('click', function() {
+  console.log('Clicked on decimal');
+
 });
 
 
